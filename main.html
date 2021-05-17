@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Лабораторная работа по компьютерной графике №3</title>
+</head>
+<body>
+<div><span class="word">Формирование билинейной поверхности на основе её четырех угловых точек</span></div>
+<br>
+<br>
+<div class="table">
+    <div><p>Введите координаты точек:</p></div>
+    <div><p>(от 0 до 1000)</p></div>
+
+    <form method="post" action="">
+        <table id="table" width="600" border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">X</th>
+                <th scope="col">Y</th>
+                <th scope="col">Z</th>
+            </tr>
+            <tr>
+                <td><span>A</span></td>
+                <td><label for="x1Text"></label><input type="number" class="input_number" name="" id="x1Text" min="0" max="1000" value="150" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1);"></td>
+                <td><label for="y1Text"></label><input type="number" class="input_number" name="" id="y1Text" min="0" max="1000" value="700" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+                <td><label for="z1Text"></label><input type="number" class="input_number" name="" id="z1Text" min="0" max="1000" value="100" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+            </tr>
+            <tr>
+                <td><span>B</span></td>
+                <td><input type="number" class="input_number" name="" id="x2Text" min="0" max="1000" value="700" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+                <td><input type="number" class="input_number" name="" id="y2Text" min="0" max="1000" value="500" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+                <td><input type="number" class="input_number" name="" id="z2Text" min="0" max="1000" value="200" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+            </tr>
+            <tr>
+                <td><span>C</span></td>
+                <td><input type="number" class="input_number" name="" id="x3Text" min="0" max="1000" value="700" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+                <td><input type="number" class="input_number" name="" id="y3Text" min="0" max="1000" value="100" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+                <td><input type="number" class="input_number" name="" id="z3Text" min="0" max="1000" value="1000" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+            </tr>
+            <tr>
+                <td><span>D</span></td>
+                <td><input type="number" class="input_number" name="" id="x4Text" min="0" max="1000" value="200" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+                <td><input type="number" class="input_number" name="" id="y4Text" min="0" max="1000" value="900" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+                <td><input type="number" class="input_number" name="" id="z4Text" min="0" max="1000" value="900" onchange="draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--    ///////////////////////////-->
+<div>
+    <canvas id="canvas" style="background: url(image/back1.jpg) no-repeat; border: 2px solid #0e0e0e; margin:15px;"></canvas>
+    <!--    ///////////////////////////-->
+    <div class="degree">
+        <div><p>Введите углы:</p></div>
+        <br>
+        <span>X<sup>o</sup></span>
+        <label for="xDegreeText"></label><input type="number" style="width: 100px" class="slider" id="xDegreeText" min="0" max="360" value="0" onchange="xDegreeSlider.value = xDegreeText.value; draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)">
+        <label for="xDegreeSlider"></label><input oninput="xDegreeText.value = xDegreeSlider.value; draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1, 1)" class="slider" type="range" min="0" max="360" value="0" id="xDegreeSlider" step="1" onchange="xDegreeText.value = xDegreeSlider.value; draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)">
+
+        <span>Y<sup>o</sup></span>
+        <label for="yDegreeText"></label><input type="number" style="width: 100px" class="slider" id="yDegreeText" min="0" max="360" value="0" onchange="yDegreeSlider.value = yDegreeText.value; draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)">
+        <label for="yDegreeSlider"></label><input oninput="yDegreeText.value = yDegreeSlider.value; draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1, 0)" class="slider" type="range" min="0" max="360" value="0" id="yDegreeSlider" step="1" onchange="yDegreeText.value = yDegreeSlider.value; draw(ctx, X, Y, Z, xDegreeText1, yDegreeText1)">
+    </div>
+</div>
+
+</body>
+<script src="scripts/draw_bisurface.js"></script>
+
+</html>

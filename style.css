@@ -1,0 +1,79 @@
+@font-face {
+    font-family: JetBrainsMono Regular;
+    src:url(fonts/JetBrainsMono-Regular.ttf);
+}
+
+body{
+    font-family: JetBrainsMono Regular, sans-serif;
+    font-size: 20px;
+}
+
+.word {
+    font-family: JetBrainsMono Regular, sans-serif;
+    flex-wrap: wrap;
+    margin: 270px;
+    font-size: 37px;
+
+}
+
+.input_group {
+    margin: 50px;
+}
+
+.table {
+    float: left;
+    margin-left: 50px;
+    margin-right: 40px;
+}
+
+.degree {
+    float: right;
+    margin-right: 50px;
+}
+
+.input_number {
+    font-family: JetBrainsMono Regular, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    margin-right: 10px;
+    width: 100%;
+
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    font-family: JetBrainsMono Regular, sans-serif;
+    font-size: 17px;
+    color: black;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to right, #e9c40c, #840ce9);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to right, #e9b20c, #840ce9);
+    cursor: pointer;
+}
